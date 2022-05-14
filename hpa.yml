@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: php-apache
+  name: biswalashu/hpa-image
 spec:
   selector:
     matchLabels:
-      run: php-apache
+      run: biswalashu/hpa-image
   replicas: 1
   template:
     metadata:
       labels:
-        run: php-apache
+        run: biswalashu/hpa-image
     spec:
       containers:
-      -	name: php-apache
-      image:  k8s.gcr.io/hpa-example
+      -	name: biswalashu/hpa-image
+      image:  biswalashu/hpa-image
       ports:
       - containerPort: 80
         resources:
@@ -28,27 +28,27 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: php_apache
+  name: biswalashu/hpa-image
   labels:
-    run: php-apache
+    run: biswalashu/hpa-image
 spec:
   ports:
   -	port: 80
   selector:
-    run: php-apache
+    run: biswalashu/hpa-image
 
 ---
 
 apiVersion: autoscalling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: php-apache
+  name: biswalashu/hpa-image
   namespace: default
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: php-apache
+    name: biswalashu/hpa-image
   minReplicas: 1
   maxReplicas: 10
   targetCPUUtilizationPercentage: 50
