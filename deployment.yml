@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  deploy1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: prod
+  template:
+    metadata:
+      name: mypod1
+      labels:
+          env: prod
+    spec:
+      hostNetwork: true
+      containers:
+      - name:  nginx-container
+        image: biswalashu/hpa-image:latest
+        ports:
+          - containerPort: 80
+        resources:
+          requests:
+            cpu: 500m
+          limits:
+            cpu: 1000m
