@@ -7,16 +7,10 @@
 
 #EXPOSE 80
 
-#FROM centos:latest
-#RUN yum install httpd -y
-#COPY index.html /var/www/html/
-
-#CMD [“/usr/sbin/httpd”,” -D”,” FOREGROUND”]
-#EXPOSE 80
-
-FROM php:7.4-cli
-RUN mkdir /usr/src/myapp
-COPY index.php /usr/src/myapp
-WORKDIR /usr/src/myapp
+FROM centos:latest
+USER root
+RUN yum install httpd -y
+RUN yum install php -y
+COPY index.html /var/www/html/
+CMD [“/usr/sbin/httpd”,” -D”,” FOREGROUND”]
 EXPOSE 80
-CMD [ "php", "./your-script.php" ]
