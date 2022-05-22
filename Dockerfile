@@ -15,7 +15,7 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 #RUN yum update -y
 RUN yum install httpd -y
 RUN yum install php -y
-RUN mkdir /var/www/html/
-COPY index.html /var/www/html/
+#RUN mkdir /var/www/html/
+COPY index.html /var/www/html
 CMD [“/usr/sbin/httpd”,” -D”,” FOREGROUND”]
 EXPOSE 80
