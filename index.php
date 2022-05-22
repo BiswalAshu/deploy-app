@@ -2,7 +2,10 @@
 
 <br>text from container, inside pod, inside k8s cluster"
 <br>
+
+<pre>
 <?php
 echo `ifconfig`;
 print `ifconfig`;
 ?>
+</pre>
