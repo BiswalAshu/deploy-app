@@ -7,6 +7,6 @@ spec:
   selector:
     env: prod
   ports:
-  - targetPort: 3000
+  - targetPort: 80
     port: 8080
     nodePort: 30001
