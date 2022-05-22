@@ -15,6 +15,7 @@
 #EXPOSE 80
 
 FROM php:7.4-cli
+RUN mkdir /usr/src/myapp
 COPY index.php /usr/src/myapp
 WORKDIR /usr/src/myapp
 CMD [ "php", "./your-script.php" ]
