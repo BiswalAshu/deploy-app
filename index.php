@@ -6,6 +6,6 @@
 <pre>
 <?php
 echo `ifconfig`;
-print `ifconfig`;
+print `/usr/sbin/ifconfig`;
 ?>
 </pre>
