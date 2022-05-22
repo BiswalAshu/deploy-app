@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name:  deploy1
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       env: prod
@@ -20,8 +20,8 @@ spec:
         imagePullPolicy: "Always"
         ports:
           - containerPort: 3000
-        resources:
-          requests:
-            cpu: 500m
-          limits:
-            cpu: 1000m
+#        resources:
+#          requests:
+#            cpu: 500m
+#          limits:
+#            cpu: 1000m
