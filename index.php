@@ -5,7 +5,7 @@
 
 <pre>
 <?php
-echo `ifconfig`;
+Ashutosh
 print `/usr/sbin/ifconfig`;
 ?>
 </pre>
