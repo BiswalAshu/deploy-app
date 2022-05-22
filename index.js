@@ -5,7 +5,7 @@ const fs = require("fs");
 const { exec } = require("child_process");
 
 app.get("/", (req, res) => {
-  exec("ipconfig", (error, stdout, stderr) => {
+  exec("ifconfig", (error, stdout, stderr) => {
     var html_path = path.join(__dirname, "/index.html");
     var content = "";
     if (error) {
