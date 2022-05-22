@@ -2,8 +2,8 @@ FROM httpd
 
 #COPY index.html /usr/share/nginx/html
 
-COPY index.html /usr/local/apache2/htdocs
-COPY index.html /var/www/html
+COPY index.php /usr/local/apache2/htdocs
+COPY index.php /var/www/html
 
 EXPOSE 80
 
